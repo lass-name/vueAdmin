@@ -4,12 +4,12 @@ const routes = [{
   component: () => import('@/views/layout')
 }, {
   path: '/layout',
-  name: 'test',
+  name: 'layout',
   component: () => import('@/views/layout'),
   children: [{
-    path: '/test',
-    name: 'test',
-    component: () => import('@/views/test')
+    path: '/table',
+    name: 'table',
+    component: () => import('@/views/tables')
   }]
 }, {
   path: '/login',

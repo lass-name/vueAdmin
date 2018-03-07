@@ -56,5 +56,12 @@ export default {
       color:#999;
     }
   }
+  .el-main{
+    background-color: #F2F2F2;
+    padding: 20px 10px;
+  }
+  .el-breadcrumb{
+    margin-bottom: 15px;
+  }
 }
 </style>

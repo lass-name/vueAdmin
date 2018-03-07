@@ -18,7 +18,7 @@ Object.keys(filters).forEach(key => {
 })
 Vue.use(vuex)
 Vue.use(Router)
-Vue.use(ElementUI)
+Vue.use(ElementUI, {size: 'small'})
 
 Object.keys(directives).forEach(key => {
   Vue.directive(key, directives[key])
