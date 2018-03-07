@@ -1,10 +1,15 @@
 import modules from './modules'
+import server from '@/server'
 
 const state = {}
 
 const getters = {}
 
-const actions = {}
+const actions = {
+  add ({commit}, playload) {
+    return server.request(commit, playload, '')
+  }
+}
 
 const mutations = {}
 
