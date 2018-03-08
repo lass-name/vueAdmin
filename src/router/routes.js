@@ -1,3 +1,10 @@
+const options = {}
+
+let _childs = []
+Object.keys(options).forEach(key => {
+  Array.prototype.push.apply(_childs, options[key])
+})
+
 const routes = [{
   path: '/',
   name: 'home',
@@ -10,7 +17,7 @@ const routes = [{
     path: '/table',
     name: 'table',
     component: () => import('@/views/tables')
-  }]
+  }, ..._childs]
 }, {
   path: '/login',
   name: 'login',
