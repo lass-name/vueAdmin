@@ -1,0 +1,1 @@
+export const BASE_SET_SITE_MAP = 'BASE_SET_SITE_MAP'

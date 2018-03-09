@@ -24,12 +24,15 @@
 <script>
 import tableData from '../data/table-data'
 import vPager from '../components/common/Pager'
+import mixins from '@/mixins'
 export default {
   name: 'table-demo',
+  mixins: [mixins],
   data () {
     return {
       list: [],
-      total: 0
+      total: 0,
+      sitemap: [{path: '/', label: '表格示例'}]
     }
   },
   created () {

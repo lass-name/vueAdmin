@@ -17,6 +17,10 @@ const routes = [{
     path: '/table',
     name: 'table',
     component: () => import('@/views/tables')
+  }, {
+    path: '/form',
+    name: 'form',
+    component: () => import('@/views/form')
   }, ..._childs]
 }, {
   path: '/login',

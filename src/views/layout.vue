@@ -12,9 +12,9 @@
           <el-main>
             <el-breadcrumb separator="/">
               <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-              <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-              <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-              <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+              <el-breadcrumb-item v-for="(item,index) in siteMap" :key="index">{{item.label}}</el-breadcrumb-item>
+              <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+              <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
             </el-breadcrumb>
             <router-view />
           </el-main>
@@ -28,10 +28,16 @@
 <script>
 import vHeader from '../components/common/Header'
 import vSidebar from '../components/common/Sidebar'
+import {mapGetters} from 'vuex'
 export default {
   name: 'layout',
   data () {
     return {}
+  },
+  computed: {
+    ...mapGetters([
+      'siteMap'
+    ])
   },
   components: {
     vHeader,
