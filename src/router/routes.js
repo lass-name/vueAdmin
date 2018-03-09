@@ -1,4 +1,5 @@
-const options = {}
+import gank from './gank'
+const options = {gank}
 
 let _childs = []
 Object.keys(options).forEach(key => {

@@ -10,7 +10,22 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/bdj': {
+        target: '',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/bdj': ''
+        }
+      },
+      '/gank': {
+        target: 'http://gank.io/api',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/gank': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

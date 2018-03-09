@@ -5,6 +5,9 @@ let _options = {
     return {url, baseURL, timeout, method, params: !isJson && data, data: isJson && data, headers}
   }
 }
-exports.users = (url, method, data, isJson, timeout, baseURL) => {
+
+export const users = (url, method, data, isJson, timeout, baseURL) => {
   return _options.get('userservice', url, method, data, isJson, timeout, baseURL)
 }
+
+// export default users

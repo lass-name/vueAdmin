@@ -7,10 +7,11 @@ let _options = {
   timeout: 5000,
   transformRequest: [function (data, headers) {
     return data
-  }],
-  transformResponse: [function (data) {
-    return data.data
   }]
+  // transformResponse: [function (data) {
+  //   // console.log(data)
+  //   return JSON.parse(data)
+  // }]
 }
 
 let api = {
