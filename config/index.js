@@ -24,6 +24,13 @@ module.exports = {
         pathRewrite: {
           '^/gank': ''
         }
+      },
+      '/ssyer': {
+        target: 'https://www.ssyer.com/pc',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/ssyer': ''
+        }
       }
     },
 

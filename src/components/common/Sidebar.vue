@@ -29,9 +29,9 @@
         <i class="el-icon-menu"></i>
         <span slot="title">Gank数据</span>
       </el-menu-item>
-      <el-menu-item index="3" disabled>
+      <el-menu-item index="/ssyer">
         <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
+        <span slot="title">SSYER Images</span>
       </el-menu-item>
       <el-menu-item index="4">
         <i class="el-icon-setting"></i>
