@@ -33,9 +33,9 @@
         <i class="el-icon-document"></i>
         <span slot="title">SSYER Images</span>
       </el-menu-item>
-      <el-menu-item index="4">
+      <el-menu-item index="/movie">
         <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
+        <span slot="title">豆瓣电影</span>
       </el-menu-item>
     </el-menu>
   </div>

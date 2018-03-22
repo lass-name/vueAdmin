@@ -60,7 +60,7 @@ export default {
       }, false, 5000, '/ssyer')
       this.$store.dispatch('add', obj).then(({data}) => {
         this.downing.push({desc: `正在下载第${data.data.pageIndex}页的图片数据...`})
-        // this.pageCount = data.data.pageCount
+        this.pageCount = data.data.pageCount
         let _pageIndex = data.data.pageIndex
         let _images = data.data.datas.map(c => (
           {userId: c.userId, nickname: c.nickname, orderCount: c.orderCount}
@@ -70,7 +70,7 @@ export default {
           this.getImageAuth(_pageIndex + 1)
         } else {
           console.log(this.images)
-          this.exportData(this.images)
+          // this.exportData(this.images)
           // return pImages
         }
       })
@@ -109,7 +109,9 @@ export default {
           this.getMergeAuthImages(auths, index)
         } else {
           console.log(data)
-          this.exportData(data)
+          console.log(this.authImages)
+          this.exportData(this.authImages)
+          // this.exportData(data)
         }
         console.log(index)
         // console.log(data)
@@ -180,7 +182,7 @@ export default {
       let el = document.createElement('a')
       // 链接赋值
       el.href = url
-      el.download = 'ssyer.json'
+      el.download = 'ssyer_img.json'
       // 必须点击否则不会下载
       el.click()
       // 移除链接释放资源

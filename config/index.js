@@ -31,6 +31,13 @@ module.exports = {
         pathRewrite: {
           '^/ssyer': ''
         }
+      },
+      '/douban': {
+        target: 'https://api.douban.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/douban': ''
+        }
       }
     },
 

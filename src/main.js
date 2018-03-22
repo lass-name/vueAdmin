@@ -11,6 +11,7 @@ import directives from './directives'
 import _router from './router'
 import _store from './store'
 import instance from '@/server'
+import Indicator from '@/components/indicator'
 
 Vue.config.productionTip = false
 
@@ -19,6 +20,7 @@ Object.keys(filters).forEach(key => {
 })
 Vue.use(vuex)
 Vue.use(Router)
+Vue.use(Indicator)
 Vue.use(ElementUI, {size: 'small'})
 
 Object.keys(directives).forEach(key => {
@@ -37,15 +39,19 @@ router.beforeEach((to, from, next) => {
 
 // http request interceptors
 instance.axios.interceptors.request.use(config => {
+  Indicator.open()
   config.headers.token = ''
   return config
 }, error => {
+  // indicator.close()
   return Promise.reject(error)
 })
 
 instance.axios.interceptors.response.use(response => {
+  Indicator.close()
   return response
 }, error => {
+  Indicator.close()
   if (error.response && error.response !== undefined) {
     switch (error.response.status) {
       case 401:
