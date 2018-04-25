@@ -37,6 +37,10 @@
         <i class="el-icon-setting"></i>
         <span slot="title">豆瓣电影</span>
       </el-menu-item>
+      <el-menu-item index="/albums">
+        <i class="el-icon-setting"></i>
+        <span slot="title">网易歌曲</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>

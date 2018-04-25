@@ -38,6 +38,13 @@ module.exports = {
         pathRewrite: {
           '^/douban': ''
         }
+      },
+      '/netease': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/netease': ''
+        }
       }
     },
 

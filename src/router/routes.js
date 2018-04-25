@@ -1,7 +1,8 @@
 import gank from './gank'
 import ssyer from './ssyer'
 import douban from './douban'
-const options = {gank, ssyer, douban}
+import netease from './netease'
+const options = {gank, ssyer, douban, netease}
 
 let _childs = []
 Object.keys(options).forEach(key => {
