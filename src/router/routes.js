@@ -1,13 +1,25 @@
-import gank from './gank'
-import ssyer from './ssyer'
-import douban from './douban'
-import netease from './netease'
-const options = {gank, ssyer, douban, netease}
+// import gank from './gank'
+// import ssyer from './ssyer'
+// import douban from './douban'
+// import netease from './netease'
+// const options = {gank, ssyer, douban, netease}
 
 let _childs = []
-Object.keys(options).forEach(key => {
-  Array.prototype.push.apply(_childs, options[key])
+// Object.keys(options).forEach(key => {
+//   Array.prototype.push.apply(_childs, options[key])
+// })
+
+let _routers = []
+const requireRouters = require.context('.', false, /\.js$/)
+requireRouters.keys().forEach(fileName => {
+  if (fileName === './index.js' || fileName === './routes.js') return
+
+  // const routerName = fileName.replace(/\.\/|\.js/g, '')
+  // console.log(routerName)
+  _routers = [..._routers, ...requireRouters(fileName).default]
 })
+_childs = _routers
+// console.dir(_routers)
 
 const routes = [{
   path: '/',
